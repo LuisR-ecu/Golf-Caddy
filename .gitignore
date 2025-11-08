@@ -1,0 +1,85 @@
+# ─────────────────────────────
+# Global
+# ─────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+*.sqlite3
+.env
+.env.local
+.env.*.local
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ─────────────────────────────
+# Python / FastAPI
+# ─────────────────────────────
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+pip-wheel-metadata/
+build/
+dist/
+.eggs/
+*.egg-info/
+instance/
+*.spec
+.pytest_cache/
+.mypy_cache/
+coverage.xml
+htmlcov/
+pytestdebug.log
+
+# Model artifacts
+api/ml/models/*.joblib
+api/ml/models/*.pkl
+api/cv/models/*.pth
+api/cv/models/__pycache__/
+
+# Data & generated files
+data/
+uploads/
+*.csv
+*.npy
+*.npz
+
+# ─────────────────────────────
+# Node / React (frontend)
+# ─────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+frontend/.vercel/
+frontend/yarn-error.log
+frontend/package-lock.json
+frontend/.env
+
+# ─────────────────────────────
+# Docker / Build Artifacts
+# ─────────────────────────────
+*.pid
+*.seed
+*.pid.lock
+tmp/
+logs/
+docker-compose.override.yml
+.env.example  # Keep template tracked manually if needed
+
+# ─────────────────────────────
+# OS / Misc
+# ─────────────────────────────
+*.swp
+*.swo
+*.bak
+*.tmp
+*.old
+*.orig
+*.rej
