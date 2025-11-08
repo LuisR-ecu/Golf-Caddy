@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: golfcaddy
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: golfcaddy
+    ports: ["5432:5432"]
+    volumes: [postgres_data:/var/lib/postgresql/data]
+
+  api:
+    build: ./api
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    env_file: .env
+    ports: ["8000:8000"]
+    volumes: ["./api:/app"]
+    depends_on: [postgres]
+
+  frontend:
+    build: ./frontend
+    ports: ["3000:3000"]
+    environment:
+      NEXT-PUBLIC_API_URL: http://localhost:8000
+    volumes: ["./frontend:/app"]
+    depends_on: [api]
+
+volumes:
+  postgres_data:
